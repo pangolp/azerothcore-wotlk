@@ -4472,10 +4472,6 @@ void Spell::finish(bool ok)
             if (m_spellInfo->IsCooldownStartedOnEvent())
                 m_caster->ToPlayer()->SendCooldownEvent(m_spellInfo, 0, 0, false);
 
-            // Rogue fix: Remove Cold Blood if Mutilate off-hand failed
-            if (m_spellInfo->Id == 27576) // Mutilate, off-hand
-                if (m_caster->HasAura(14177))
-                    m_caster->RemoveAura(14177);
         }
         return;
     }
